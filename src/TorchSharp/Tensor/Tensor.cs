@@ -3329,8 +3329,9 @@ namespace TorchSharp
             /// Applying torch.diag_embed() to the output of this function with the same arguments yields a diagonal matrix with the diagonal entries of the input.
             /// However, torch.diag_embed() has different default dimensions, so those need to be explicitly specified.
             /// </remarks>
-            public Tensor diagonal(long offset = 0, long dim1 = 0, long dim2 = 0)
+            public Tensor diagonal(long offset = 0L, long dim1 = 0L, long dim2 = 1L)
             {
+                if (dim1 == dim2) throw new ArgumentException($"Diagonal dimensions cannot be identical {dim1}, {dim2}");
                 var res = NativeMethods.THSTensor_diagonal(Handle, offset, dim1, dim2);
                 if (res == IntPtr.Zero) { CheckForErrors(); }
                 return new Tensor(res);
@@ -6505,15 +6506,17 @@ namespace TorchSharp
 
                 var dim = t.dim();
 
-                if (t.size().Length == 0) return "";
                 var sb = new StringBuilder(isFCreate ? string.Join("", Enumerable.Repeat(' ', (int)(mdim - dim))) : "");
+
+                if (dim == 0) {
+                    PrintValue(sb, t.dtype, t.ToScalar(), fltFormat, actualCulturInfo);
+                    return sb.ToString(); ;
+                }
+
                 sb.Append('[');
                 var currentSize = t.size()[0];
                 if (currentSize == 0) {
                     // print nothing
-                }
-                else if (dim == 0) {
-                    PrintValue(sb, t.dtype, t.ToScalar(), fltFormat, actualCulturInfo);
                 }
                 else if (dim == 1) {
                     if (currentSize <= torch.maxColumns) {
