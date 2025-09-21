@@ -30,6 +30,7 @@ set(SOURCES
     cifar10.h
 	crc32c.h
 	THSAmp.h
+	THSHistogram.h
 	THSQuantize.h
     THSAutograd.h
     THSBFloat16.h
@@ -46,6 +47,7 @@ set(SOURCES
 	crc32c.c
 	THSActivation.cpp
 	THSAmp.cpp
+	THSHistogram.cpp
 	THSQuantize.cpp
     THSAutograd.cpp
 	THSBFloat16.cpp
@@ -106,6 +108,9 @@ endif()
 target_link_libraries(LibTorchSharp ${TORCH_LIBRARIES})
 
 set_property(TARGET LibTorchSharp PROPERTY CXX_STANDARD 14)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -msse4.2 -mavx") #WARNING TEST THIS
+
 
 if(APPLE)
     set_target_properties(LibTorchSharp PROPERTIES INSTALL_RPATH "@loader_path;@executable_path;")

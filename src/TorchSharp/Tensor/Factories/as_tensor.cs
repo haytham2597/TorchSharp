@@ -7,6 +7,7 @@ namespace TorchSharp
 {
     public static partial class torch
     {
+        //TODO: Implement as_tensor with Half and BFloat16 dtype
         // as_tensor()
 
         public static Tensor as_tensor(Tensor data, ScalarType? dtype = null, Device? device = null)

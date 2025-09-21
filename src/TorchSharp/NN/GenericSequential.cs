@@ -9,8 +9,6 @@ using static TorchSharp.torch;
 namespace TorchSharp
 {
     using System.Runtime.CompilerServices;
-    using Modules;
-    using TorchSharp.PInvoke;
 
     namespace Modules
     {

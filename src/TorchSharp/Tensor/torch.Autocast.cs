@@ -1,4 +1,3 @@
-using System;
 using static TorchSharp.PInvoke.NativeMethods;
 
 namespace TorchSharp

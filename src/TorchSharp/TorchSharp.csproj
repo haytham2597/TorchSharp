@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
   <!-- Implicit top import -->
   <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
 
@@ -11,6 +11,7 @@
     <UseStyleCopAnalyzer>false</UseStyleCopAnalyzer>
     <IsPackable>false</IsPackable>
     <DefineConstants>$(DefineConstants);LIBTORCH_$(LibTorchPackageVersion.Replace('.', '_'));CUDA_$(CudaVersionDot.Replace('.', '_'))</DefineConstants>
+    <!--<DefineConstants Condition="Exists('$(SolutionDir)\libbitsandbytes.dll')">$(DefineConstants);LibBitsAndBytes</DefineConstants>-->
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,7 +8,6 @@ using static TorchSharp.Utils.LEB128Codec;
 
 namespace TorchSharp
 {
-    using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
     using static torch;
 
     public enum TensorStringStyle

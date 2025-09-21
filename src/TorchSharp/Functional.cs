@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using static TorchSharp.torch.autograd;
 
 namespace TorchSharp
 {

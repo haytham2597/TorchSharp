@@ -7,7 +7,6 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using TorchSharp.Modules;
 using static TorchSharp.torch;
-using static TorchSharp.Utils.LEB128Codec;
 using static TorchSharp.PInvoke.NativeMethods;
 using TorchSharp.Utils;
 

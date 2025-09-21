@@ -1,6 +1,5 @@
 // Copyright (c) .NET Foundation and Contributors.  All Rights Reserved.  See LICENSE in the project root for license information.
 using System;
-using TorchSharp.Amp;
 using static TorchSharp.torch;
 using static TorchSharp.torch.nn;
 using static TorchSharp.PInvoke.NativeMethods;
@@ -8,7 +7,6 @@ using static TorchSharp.PInvoke.NativeMethods;
 #nullable enable
 namespace TorchSharp
 {
-    using System.Linq;
     using Modules;
 
     namespace Modules

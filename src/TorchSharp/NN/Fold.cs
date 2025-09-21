@@ -6,7 +6,6 @@ using static TorchSharp.PInvoke.NativeMethods;
 #nullable enable
 namespace TorchSharp
 {
-    using System.Security.Cryptography;
     using Modules;
 
     namespace Modules

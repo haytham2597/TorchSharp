@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using ICSharpCode.SharpZipLib.BZip2;
 
 namespace TorchSharp
 {

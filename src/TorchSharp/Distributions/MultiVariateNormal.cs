@@ -6,7 +6,6 @@ using static TorchSharp.torch;
 
 namespace TorchSharp
 {
-    using System.Numerics;
     using Modules;
 
     namespace Modules

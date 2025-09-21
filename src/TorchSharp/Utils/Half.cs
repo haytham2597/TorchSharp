@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Text;
 
 //Is only for NetStandard 2.0, Net 5 or newer already have Half Struct
 //TODO: Need make support with Net Core 3?

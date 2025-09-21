@@ -10,7 +10,6 @@ namespace TorchSharp
 {
     using System.Runtime.CompilerServices;
     using Modules;
-    using TorchSharp.PInvoke;
 
     namespace Modules
     {
