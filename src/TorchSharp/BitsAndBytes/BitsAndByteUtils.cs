@@ -2,11 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using TorchSharp;
 using TorchSharp.PInvoke;
-using TorchSharp.Utils;
 
 
 namespace TorchSharp.BitsAndBytes
@@ -14,13 +10,10 @@ namespace TorchSharp.BitsAndBytes
     //BASED ON: https://github.com/LittleLittleCloud/TorchSharp.BitsAndBytes
     public class BitsAndByteUtils
     {
-        /// <summary>
-        /// [methodname, quantized type, scalar type] -> [MethodInfo]
-        /// </summary>
         static readonly Dictionary<string, MethodInfo> bitsandbyte_methods_natives = new Dictionary<string, MethodInfo>();
         public static void Initialize()
         {
-            var methods = typeof(BitsAndBytesNatives).GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly)
+            var methods = typeof(BitsAndBytesNatives).GetMethods(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.DeclaredOnly)
                 .Where(x=>x.Name.StartsWith("cquantize") ||
                           x.Name.StartsWith("cdequantize") ||
                           x.Name.StartsWith("cgemm_4bit"));

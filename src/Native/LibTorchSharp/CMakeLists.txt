@@ -30,6 +30,7 @@ set(SOURCES
     cifar10.h
 	crc32c.h
 	THSAmp.h
+	THSQuantize.h
     THSAutograd.h
     THSBFloat16.h
 	THSCuda.h
@@ -45,6 +46,7 @@ set(SOURCES
 	crc32c.c
 	THSActivation.cpp
 	THSAmp.cpp
+	THSQuantize.cpp
     THSAutograd.cpp
 	THSBFloat16.cpp
 	THSCuda.cpp
