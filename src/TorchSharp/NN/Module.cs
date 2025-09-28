@@ -1118,7 +1118,7 @@ namespace TorchSharp
 
                 protected void ClearModules() { _internal_submodules.clear(); }
 
-                private bool _areComponentsRegistered;
+                //private bool _areComponentsRegistered;
 
                 protected Utils.OrderedDict<string, Module> _internal_submodules = new Utils.OrderedDict<string, Module>();
                 protected Utils.OrderedDict<string, (Tensor, bool)> _internal_buffers = new Utils.OrderedDict<string, (Tensor, bool)>();
