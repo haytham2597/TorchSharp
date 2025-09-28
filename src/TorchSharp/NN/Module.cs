@@ -1059,7 +1059,9 @@ namespace TorchSharp
 
                 protected virtual void RegisterComponents()
                 {
-                    if (_areComponentsRegistered) return;
+                    //TEST: If should check derived class modules or comment "_areComponentRegistered" is enough
+                    //https://github.com/dotnet/TorchSharp/issues/1485
+                    //if (_areComponentsRegistered) return;
 
                     foreach (var field in GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)) {
 
@@ -1081,7 +1083,7 @@ namespace TorchSharp
                         }
                     }
 
-                    _areComponentsRegistered = true;
+                    //_areComponentsRegistered = true;
                 }
 
 
